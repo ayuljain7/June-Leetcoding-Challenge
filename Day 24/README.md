@@ -39,16 +39,5 @@
 </p><pre><code>G(n) = G(0) * G(n-1) + G(1) * G(n-2) + … + G(n-1) * G(0) 
 </code></pre>
 <p></p><p>In terms of calculation, we need to start with the lower number, since the value of <code>G(n)</code> depends on the values of <code>G(0) … G(n-1)</code>.</p><p>
-</p><p>With the above explanation and formulas, here is the implementation in Java.</p><p>
-</p><pre><code><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">numTrees</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n)</span> </span>{
-  <span class="hljs-keyword">int</span> [] G = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[n+<span class="hljs-number">1</span>];
-  G[<span class="hljs-number">0</span>] = G[<span class="hljs-number">1</span>] = <span class="hljs-number">1</span>;
-    
-  <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">2</span>; i&lt;=n; ++i) {
-    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j=<span class="hljs-number">1</span>; j&lt;=i; ++j) {
-      G[i] += G[j<span class="hljs-number">-1</span>] * G[i-j];
-    }
-  }
-  <span class="hljs-keyword">return</span> G[n];
-}</code></pre><p></p>
+</br>
 <h3> This Solution was provided by liasion who is also a staff member of leetcode . So all thanks to him.</h3>
